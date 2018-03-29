@@ -1,27 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="10dp">
 
-    <TimePicker
-        android:id="@+id/timePicker"
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/user" />
+
+    <EditText
+        android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/imageView"
+        android:layout_marginStart="19dp"
+        android:layout_toEndOf="@+id/imageView"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/searchbtn"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Close"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/timePicker" />
-</android.support.constraint.ConstraintLayout>
+        android:layout_alignStart="@+id/editText"
+        android:layout_below="@+id/editText"
+        android:text="Search"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/cnbtn"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/editText"
+        android:layout_below="@+id/editText"
+        android:text="Cancel" />
+
+    <TextView
+        android:id="@+id/resultTXT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/imageView"
+        android:layout_marginTop="24dp"
+        android:text="Result Of Search"
+        android:textAlignment="center"
+        android:textStyle="bold" />
+</RelativeLayout>
